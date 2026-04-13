@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Button, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
-
-// Importando a modelagem TypeScript que criamos nas aulas anteriores
 import { Especialidade } from "./src/types/especialidade";
 import { Paciente } from "./src/types/paciente";
 import { Medico } from "./src/interfaces/medico";
 import { Consulta } from "./src/interfaces/consulta";
 
 export default function App() {
-  // Dados base (simulando o que tínhamos no backend)
   const cardiologia: Especialidade = {
     id: 1,
     nome: "Cardiologia",
@@ -32,18 +29,17 @@ export default function App() {
     telefone: "(11) 98765-4321",
   };
 
-  // Estado da consulta
   const [consulta, setConsulta] = useState<Consulta>({
     id: 1,
     medico: medico1,
     paciente: paciente1,
-    data: new Date(2026, 2, 10), // 10/03/2026
+    data: new Date(2026, 2, 10),
     valor: 350,
     status: "agendada",
     observacoes: "Consulta de rotina",
   });
 
-  // Funções para manipular a consulta
+  
   function confirmarConsulta() {
     setConsulta({
       ...consulta,
@@ -58,7 +54,6 @@ export default function App() {
     });
   }
 
-  // Função para formatar valor em reais
   function formatarValor(valor: number): string {
     return valor.toLocaleString("pt-BR", {
       style: "currency",
@@ -66,7 +61,6 @@ export default function App() {
     });
   }
 
-  // Função para formatar data
   function formatarData(data: Date): string {
     return data.toLocaleDateString("pt-BR");
   }
