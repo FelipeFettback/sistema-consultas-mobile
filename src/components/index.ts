@@ -1,4 +1,4 @@
-export { default as ConsultaCard } from "./consultaCard"
+export { default as ConsultaCard } from "./ConsultaCard"
 
  /*
  * export { default as Loading } from "./Loading";
